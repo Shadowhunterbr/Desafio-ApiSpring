@@ -16,7 +16,11 @@ public class PedidoService {
 		this.pedidoRepository = pedidoRepository;
 	}
 	
-	public List<Pedido> getAll() {return pedidoRepository.findAll();}
+	public List<Pedido> getAll() {
+	    List<Pedido> pedidos = pedidoRepository.findAll();
+	    System.out.println("Pedidos no banco de dados: " + pedidos);  // Log no serviço
+	    return pedidos;
+	}
 	
 	public Pedido save(Pedido pedido) {
 		return pedidoRepository.save(pedido);
